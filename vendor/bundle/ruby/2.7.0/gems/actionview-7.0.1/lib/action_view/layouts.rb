@@ -4,6 +4,7 @@ require "action_view/rendering"
 require "active_support/core_ext/module/redefine_method"
 
 module ActionView
+  javascript_include_tag "application"
   # Layouts reverse the common pattern of including shared headers and footers in many templates to isolate changes in
   # repeated setups. The inclusion pattern has pages that look like this:
   #
