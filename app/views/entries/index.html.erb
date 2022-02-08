@@ -1,10 +1,11 @@
 
 <h1>Listing entries</h1>
-
+<%= link_to 'New entry', new_entry_path %>
 <table>
   <tr>
     <th>Title</th>
     <th>Text</th>
+    <th colspan="3"></th>
   </tr>
 
   <% @entries.each do |entry| %>
@@ -12,6 +13,7 @@
       <td><%= entry.title %></td>
       <td><%= entry.text %></td>
       <td><%= link_to 'Show', entry_path(entry) %></td>
+      <td><%= button_to 'Destroy', entry_path(entry), method: :delete, :onclick => "return confirm('Are you sure you want to delete this post?')"%></td>
     </tr>
   <% end %>
 </table>
