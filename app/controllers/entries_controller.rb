@@ -19,6 +19,7 @@ class EntriesController < ApplicationController
 
   def create
     @entry = Entry.new(entry_params)
+    @entry.update(user_id: session[:user_id])
     @entry.save
     redirect_to @entry
   end
