@@ -4,7 +4,7 @@ class EntriesController < ApplicationController
   end
 
   def index
-    @entries = Entry.all
+    @entries = Entry.where(user_id: session[:user_id])
   end
 
   def new
@@ -25,6 +25,6 @@ class EntriesController < ApplicationController
   end
 
   def entry_params
-    params.require(:entry).permit(:title, :text)
+    params.require(:entry).permit(:title, :text, :emoji)
   end
 end
